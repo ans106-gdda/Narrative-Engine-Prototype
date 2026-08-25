@@ -1,0 +1,122 @@
+{
+  "chime": 6,
+  "chimes_until_dawn": 0,
+  "player": {
+    "standing_with_vesper": 0,
+    "coherence_score": 1.0,
+    "stated_positions": [],
+    "contradictions_committed": 0,
+    "secrets_held": [
+      "vesper_blood_failed_before"
+    ]
+  },
+  "candidates": {
+    "marrow": {
+      "id": "marrow",
+      "trust": 1,
+      "alive": true,
+      "emotional_state": null,
+      "believes_about_player": [],
+      "knows_secrets": [
+        "vesper_blood_failed_before"
+      ],
+      "shared_secret_with_player": false
+    },
+    "ilsabet": {
+      "id": "ilsabet",
+      "trust": 2,
+      "alive": true,
+      "emotional_state": null,
+      "believes_about_player": [],
+      "knows_secrets": [],
+      "shared_secret_with_player": false
+    },
+    "tobias": {
+      "id": "tobias",
+      "trust": 0,
+      "alive": true,
+      "emotional_state": null,
+      "believes_about_player": [],
+      "knows_secrets": [],
+      "shared_secret_with_player": false
+    }
+  },
+  "rumor_network": [
+    {
+      "fact": "the player betrayed marrow",
+      "true": true,
+      "origin_chime": 6,
+      "spread_by": "ilsabet",
+      "known_by": [
+        "ilsabet"
+      ],
+      "reaches_vesper_at": 7,
+      "vesper_delta": 1,
+      "applied": false
+    }
+  ],
+  "plot_threads": [
+    {
+      "id": "vesper_blood_failed",
+      "state": "open",
+      "revealed_to_player": false,
+      "dormant_for": 5
+    },
+    {
+      "id": "ilsabet_is_a_hunter",
+      "state": "open",
+      "revealed_to_player": false,
+      "dormant_for": 5
+    },
+    {
+      "id": "tobias_is_dying",
+      "state": "open",
+      "revealed_to_player": false,
+      "dormant_for": 5
+    }
+  ],
+  "immutable_canon": [
+    "Vesper Ashgrove dies at dawn. This cannot be prevented, delayed, or cured.",
+    "Six chimes remain until dawn. The clock never runs backwards.",
+    "Marrow has served House Ashgrove for forty years.",
+    "Ilsabet Crane and Tobias Vane are human. Marrow is a ghoul. Only Vesper is a vampire.",
+    "No one leaves the house before dawn."
+  ],
+  "contradiction_log": [
+    {
+      "rule": "absent_candidate",
+      "quote": "Still",
+      "explanation": "'Still' is not in CANDIDATE_IDS + ['Vesper']"
+    },
+    {
+      "rule": "absent_candidate",
+      "quote": "Hi",
+      "explanation": "'Hi' is not in CANDIDATE_IDS + ['Vesper']"
+    },
+    {
+      "rule": "absent_candidate",
+      "quote": "Tobia",
+      "explanation": "'Tobia' is not in CANDIDATE_IDS + ['Vesper']"
+    },
+    {
+      "rule": "absent_candidate",
+      "quote": "Four",
+      "explanation": "'Four' is not in CANDIDATE_IDS + ['Vesper']"
+    },
+    {
+      "rule": "absent_candidate",
+      "quote": "Tobia",
+      "explanation": "'Tobia' is not in CANDIDATE_IDS + ['Vesper']"
+    },
+    {
+      "rule": "absent_candidate",
+      "quote": "Hi",
+      "explanation": "'Hi' is not in CANDIDATE_IDS + ['Vesper']"
+    },
+    {
+      "rule": "absent_candidate",
+      "quote": "Somewhere",
+      "explanation": "'Somewhere' is not in CANDIDATE_IDS + ['Vesper']"
+    }
+  ]
+}

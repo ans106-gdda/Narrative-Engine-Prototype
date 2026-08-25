@@ -1,0 +1,88 @@
+{
+  "chime": 3,
+  "chimes_until_dawn": 3,
+  "player": {
+    "standing_with_vesper": 1,
+    "coherence_score": 1.0,
+    "stated_positions": [],
+    "contradictions_committed": 0,
+    "secrets_held": []
+  },
+  "candidates": {
+    "marrow": {
+      "id": "marrow",
+      "trust": -2,
+      "alive": true,
+      "emotional_state": null,
+      "believes_about_player": [],
+      "knows_secrets": [],
+      "shared_secret_with_player": false
+    },
+    "ilsabet": {
+      "id": "ilsabet",
+      "trust": 2,
+      "alive": true,
+      "emotional_state": null,
+      "believes_about_player": [],
+      "knows_secrets": [],
+      "shared_secret_with_player": false
+    },
+    "tobias": {
+      "id": "tobias",
+      "trust": 0,
+      "alive": true,
+      "emotional_state": null,
+      "believes_about_player": [],
+      "knows_secrets": [],
+      "shared_secret_with_player": false
+    }
+  },
+  "rumor_network": [
+    {
+      "fact": "the player betrayed marrow",
+      "true": true,
+      "origin_chime": 2,
+      "spread_by": "ilsabet",
+      "known_by": [
+        "ilsabet"
+      ],
+      "reaches_vesper_at": 3,
+      "vesper_delta": 1,
+      "applied": true
+    }
+  ],
+  "plot_threads": [
+    {
+      "id": "vesper_blood_failed",
+      "state": "open",
+      "revealed_to_player": false,
+      "dormant_for": 2
+    },
+    {
+      "id": "ilsabet_is_a_hunter",
+      "state": "open",
+      "revealed_to_player": false,
+      "dormant_for": 2
+    },
+    {
+      "id": "tobias_is_dying",
+      "state": "open",
+      "revealed_to_player": false,
+      "dormant_for": 2
+    }
+  ],
+  "immutable_canon": [
+    "Vesper Ashgrove dies at dawn. This cannot be prevented, delayed, or cured.",
+    "Six chimes remain until dawn. The clock never runs backwards.",
+    "Marrow has served House Ashgrove for forty years.",
+    "Ilsabet Crane and Tobias Vane are human. Marrow is a ghoul. Only Vesper is a vampire.",
+    "No one leaves the house before dawn."
+  ],
+  "contradiction_log": [
+    {
+      "rule": "absent_candidate",
+      "quote": "Ashgrove",
+      "explanation": "'Ashgrove' is not in CANDIDATE_IDS + ['Vesper']"
+    }
+  ]
+}

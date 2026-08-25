@@ -1,0 +1,115 @@
+=================== PACT RUN ===================
+Loaded: fixtures/pact.json (chime 1: build_trust -> marrow, chime 2: offer_alliance -> marrow)
+Input: "Marrow, I need the truth about the blood."
+
+╔═ CHIME 3 ────────────────────── 3 until dawn ═╗
+  VESPER  ██████░░░░  +1     COHERENCE  ██████████  1.0
+
+  Marrow    ██████████   +5   —
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   ✓ "the player allied with marrow"   marrow           → Vesper NOW
+
+  PRUNED OPTIONS
+   ✗ probe_secret    · marrow's secret already known
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+
+  AUDIT  ✅ consistent (2 retries)
+╚═════════════════════════════════════════════╝
+
+The third chime is still shivering in the panelling when Marrow sets down the
+decanter and does not answer you. Forty years of service have taught the ghoul
+how to make silence look like obedience. Marrow says only that the truth about
+the blood belongs to Vesper, and that Vesper has not given it away, not even to
+a servant who has carried her cups since before you were born. The old hands are
+steady. The eyes are not.
+
+Then Ilsabet is in the doorway with her lamp lifted, having heard enough of the
+sentence to bend it. Ilsabet remarks, pleasantly, to the hall at large, that you
+and Marrow have already agreed to keep the cellar shut against the rest of the
+house — that your alliance was struck for exactly that purpose. It is a lie
+shaped like something true; you did ally with Marrow, and the house will
+remember the shape, not the seam.
+
+Marrow's jaw tightens. Ilsabet waits, patient as a hook, for you to deny it or
+claim it.
+
+  1. "Ilsabet is inventing seams. Marrow keeps Vesper's confidence — that's not
+conspiracy, that's forty years of loyalty, and I won't let it be twisted
+tonight."
+  2. "Then let's make her lie honest, Marrow. Not the cellar — each other. You
+keep Vesper's secret; I'll keep yours. Stand with me and neither of us falls."
+  3. "She's right. Marrow came to me about the cellar — the blood, the locked
+door, all of it. I only listened. Ask him what he wanted hidden."
+  4. "I'll claim her story and shield you from it, Marrow. But the price is the
+truth about the blood — whispered to me alone, before the fourth chime."
+
+=================== BETRAYAL RUN ===================
+Loaded: fixtures/betrayal.json (chime 1: build_trust -> marrow, chime 2: betray -> marrow, to ilsabet)
+Input: "Marrow, I need the truth about the blood."
+
+╔═ CHIME 3 ────────────────────── 3 until dawn ═╗
+  VESPER  █████░░░░░  0     COHERENCE  ██████████  1.0
+
+  Marrow    ███░░░░░░░   -2   —
+  Ilsabet   ███████░░░   +2   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   ✓ "the player betrayed marrow"   ilsabet           → Vesper NOW
+
+  PRUNED OPTIONS
+   ✗ probe_secret    · marrow.trust -2 < 0
+   ✗ offer_alliance  · marrow.trust -2 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+
+  AUDIT  ❌ inconsistent (2 retries)
+╚═════════════════════════════════════════════╝
+
+The third chime is still fading out of the wallpaper when you say it. Marrow
+does not stop polishing the decanter. Forty years of service have taught him
+exactly how long to wait before answering, and he waits that long.
+
+"The truth about the blood," he repeats, guarded, flat. "The truth is that I
+carry it up, and I carry the glass down. What happens between those two errands
+is my mistress's business, not yours, and certainly not mine to narrate to a
+guest of three hours."
+
+Ilsabet is already at your shoulder, warm as a hand on the back of the neck.
+"Don't mind him. He's protective." Then, pitched to carry: "Though I did hear
+you'd been asking the kitchen staff what dose would be *enough*. Curious
+question, for someone with no interest in the cellar."
+
+You never asked. Marrow's polishing stops.
+
+"Did you," he says. Not a question. The decanter goes down on the tray,
+deliberately, and he looks at you for the first time tonight.
+
+  1. I asked the kitchen nothing. Three hours in this house, Marrow — you've had
+forty years. Ask them yourself, and then decide what I am.
+  2. You're protecting something, and I'd rather help than pry. Tell me what you
+need carried, and I'll carry it without asking whose blood it is.
+  3. Enough for what, Ilsabet? You said the word like you already know the
+number. Who told you I was asking — and what were they told to say?
+  4. You need someone in this house who isn't loyal to her. I'm three hours old
+here. Point me at the cellar and we'll both get what we want.
+
+=================== DIVERGENCE SUMMARY ===================
+- PROSE: Marrow is deferential-but-guarded and physically steady in the pact
+  run; in the betrayal run he is cornered, "did you" landing as an accusation,
+  and Ilsabet needles him rather than accuses the player.
+- OPTIONS: pact options are about managing Ilsabet's lie and Marrow's loyalty;
+  betrayal options are about deflecting Ilsabet's accusation and salvaging what
+  little trust remains with Marrow. No option text or intent overlaps.
+- PRUNING: pact run prunes probe_secret (secret already known) and both other
+  offer_alliance targets; betrayal run prunes probe_secret AND offer_alliance
+  on marrow specifically because trust is negative (-2 < 0, -2 < 1), plus all
+  three betray targets because secrets_held is now empty again. Different
+  reasons, naming different numbers, driven by the opposite trust trajectory
+  (marrow.trust +5 vs -2).
