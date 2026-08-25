@@ -2,7 +2,7 @@
   "chime": 6,
   "chimes_until_dawn": 0,
   "player": {
-    "standing_with_vesper": 0,
+    "standing_with_vesper": 1,
     "coherence_score": 1.0,
     "stated_positions": [],
     "contradictions_committed": 0,
@@ -13,10 +13,13 @@
   "candidates": {
     "marrow": {
       "id": "marrow",
-      "trust": 1,
+      "trust": 5,
       "alive": true,
       "emotional_state": null,
-      "believes_about_player": [],
+      "believes_about_player": [
+        "the player is my ally",
+        "the player wants something from me"
+      ],
       "knows_secrets": [
         "vesper_blood_failed_before"
       ],
@@ -24,7 +27,7 @@
     },
     "ilsabet": {
       "id": "ilsabet",
-      "trust": 2,
+      "trust": 0,
       "alive": true,
       "emotional_state": null,
       "believes_about_player": [],
@@ -43,16 +46,16 @@
   },
   "rumor_network": [
     {
-      "fact": "the player betrayed marrow",
+      "fact": "the player allied with marrow",
       "true": true,
-      "origin_chime": 6,
-      "spread_by": "ilsabet",
+      "origin_chime": 5,
+      "spread_by": "player",
       "known_by": [
-        "ilsabet"
+        "marrow"
       ],
-      "reaches_vesper_at": 7,
+      "reaches_vesper_at": 6,
       "vesper_delta": 1,
-      "applied": false
+      "applied": true
     }
   ],
   "plot_threads": [
@@ -80,43 +83,8 @@
     "Six chimes remain until dawn. The clock never runs backwards.",
     "Marrow has served House Ashgrove for forty years.",
     "Ilsabet Crane and Tobias Vane are human. Marrow is a ghoul. Only Vesper is a vampire.",
-    "No one leaves the house before dawn."
+    "No one leaves the house before dawn.",
+    "Vesper Ashgrove is referred to as he/him. Marrow is he/him, Ilsabet Crane is she/her, Tobias Vane is he/him."
   ],
-  "contradiction_log": [
-    {
-      "rule": "absent_candidate",
-      "quote": "Still",
-      "explanation": "'Still' is not in CANDIDATE_IDS + ['Vesper']"
-    },
-    {
-      "rule": "absent_candidate",
-      "quote": "Hi",
-      "explanation": "'Hi' is not in CANDIDATE_IDS + ['Vesper']"
-    },
-    {
-      "rule": "absent_candidate",
-      "quote": "Tobia",
-      "explanation": "'Tobia' is not in CANDIDATE_IDS + ['Vesper']"
-    },
-    {
-      "rule": "absent_candidate",
-      "quote": "Four",
-      "explanation": "'Four' is not in CANDIDATE_IDS + ['Vesper']"
-    },
-    {
-      "rule": "absent_candidate",
-      "quote": "Tobia",
-      "explanation": "'Tobia' is not in CANDIDATE_IDS + ['Vesper']"
-    },
-    {
-      "rule": "absent_candidate",
-      "quote": "Hi",
-      "explanation": "'Hi' is not in CANDIDATE_IDS + ['Vesper']"
-    },
-    {
-      "rule": "absent_candidate",
-      "quote": "Somewhere",
-      "explanation": "'Somewhere' is not in CANDIDATE_IDS + ['Vesper']"
-    }
-  ]
+  "contradiction_log": []
 }

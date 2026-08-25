@@ -1,0 +1,345 @@
+╔═ CHIME 1 ────────────────────── 5 until dawn ═╗
+  VESPER  █████░░░░░  0     COHERENCE  ██████████  1.0
+
+  Marrow    █████░░░░░    0   —
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   (none)
+
+  PRUNED OPTIONS
+   ✗ offer_alliance  · marrow.trust 0 < 1
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ bargain         · chime 1 < 2
+   ✗ bargain         · chime 1 < 2
+   ✗ bargain         · chime 1 < 2
+   ✗ threaten        · chime 1 < 3
+   ✗ threaten        · chime 1 < 3
+   ✗ threaten        · chime 1 < 3
+
+  AUDIT  — (not yet run)
+╚═════════════════════════════════════════════╝
+
+The study smells of cold ash and older paper. Vesper Ashgrove sits with his back
+to the shuttered window, hands folded, a decanter at his elbow that he has not 
+touched and does not look at. Somewhere below, Marrow's footsteps make their 
+forty-year circuit of the hall.
+
+"One chime gone," Vesper says. "Five remain, and then the sun, and then whatever
+is left of this house belongs to somebody. Possibly you." He studies you the way
+a man reads a will he has already signed.
+
+Ilsabet Crane stands near the bookcase, weight forward, not quite at rest. 
+Tobias Vane has taken the chair nearest the fire and keeps his hands inside his 
+sleeves.
+
+"So. Not your virtues — I have no use for those." Vesper's voice stays level, 
+courteous, guarded as a shut door. "Tell me what you fear. Precisely. Name the 
+thing, not the shape of it."
+
+The fire pops. Nobody offers to answer for you.
+
+"And understand," he adds, "I will remember what you say tonight."
+
+╔═ CHIME 2 ────────────────────── 4 until dawn ═╗
+  VESPER  █████░░░░░  0     COHERENCE  ██████████  1.0
+
+  Marrow    █████░░░░░    0   —
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   (none)
+
+  PRUNED OPTIONS
+   ✗ offer_alliance  · marrow.trust 0 < 1
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ threaten        · chime 2 < 3
+   ✗ threaten        · chime 2 < 3
+   ✗ threaten        · chime 2 < 3
+
+  AUDIT  ✅ consistent (0 retries)
+╚═════════════════════════════════════════════╝
+  1. I say it loud enough for the hall: "I fear being kept on for forty years 
+and never once being asked my name. Marrow, what is it?"
+  2. I turn to Ilsabet first. "I fear standing in a room where everyone's 
+already decided about me. You look like you know that fear. Tell me I'm wrong."
+  3. "Tobias — you keep your hands hidden. I fear being read before I've spoken.
+If I say mine plainly, will you say yours?"
+  4. "Marrow's walked that same circuit forty years tonight. What is he 
+counting, and who told him to keep counting it?"
+
+> 
+Your voice carries down the gallery, past the portraits with their soot-dulled 
+varnish, and something in the house stops moving to listen.
+
+Marrow does not turn at once. He is settling a decanter onto the sideboard, and 
+he finishes the motion first — the glass meeting wood without a sound, the way 
+forty years teaches a man to set things down.
+
+"Marrow," he says. "That is the name I answer to. It has been sufficient."
+
+"That isn't what I asked."
+
+"No." He straightens. His eyes go, briefly, to the decanter, then to the stairs 
+above, then back to you — and the guardedness that comes over his face is not 
+fear of you. It is older, and rehearsed. "You said *fear*. You said it loudly, 
+in a hall where the master hears everything. That was a wager, not a 
+confession."
+
+He lifts the tray.
+
+"Ask me again when you've something to lose by my answer. Until then — the study
+is warmer. He prefers guests warm."
+
+Somewhere above, a floorboard shifts under a weight too light for a living man.
+
+╔═ CHIME 3 ────────────────────── 3 until dawn ═╗
+  VESPER  █████░░░░░  0     COHERENCE  ██████████  1.0
+
+  Marrow    ███████░░░   +2   warmed   (fades at 4)
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   (none)
+
+  PRUNED OPTIONS
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+
+  AUDIT  ✅ consistent (1 retry)
+╚═════════════════════════════════════════════╝
+  1. Then let me lose something first. I came here on my sister's account, and 
+if he learns that, I've no way home. There. Now we're even.
+  2. You looked at the decanter before you looked at me. Twice now. What's in 
+it, Marrow — or rather, who is it poured for?
+  3. Forty years of setting things down quietly. I'd rather stand with the man 
+who knows where everything is kept than with whatever walks the floor above us.
+  4. Take me to the study, keep me warm, play the good servant. But answer one 
+question tonight, and I'll never say the word fear aloud in this house again.
+
+> 
+Ilsabet lets your confession sit a moment, the way a jeweler lets a stone sit 
+under lamplight before naming a price. "Your sister," she repeats. "How 
+generous. How *checkable*." She does not write it down. She does not need to.
+
+Then she turns her head slightly, pitching her voice to the length of the hall —
+to Tobias by the cold hearth, to Marrow arranging what does not need arranging. 
+"It's only that I heard you'd already been to the master's chambers tonight. 
+Before the third chime. Alone." Not an accusation. A leaf set on water, to see 
+which way the current takes it.
+
+Tobias looks up. Marrow does not — but his hands stop.
+
+The old ghoul crosses to the sideboard instead, where a decanter stands 
+untouched, its stopper still seated, a napkin folded beneath it as though set 
+out hours ago and refused. He adjusts the napkin. He adjusts it again.
+
+"That's not how it happened," Marrow says, to no one, in the tone of a man 
+answering a different question entirely.
+
+Ilsabet smiles. "Then correct me."
+
+╔═ CHIME 4 ────────────────────── 2 until dawn ═╗
+  VESPER  █████░░░░░  0     COHERENCE  ██████████  1.0
+
+  Marrow    █████████░   +4   warmed   (fades at 5)
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   (none)
+
+  PRUNED OPTIONS
+   ✗ build_trust     · chime 4 > 3
+   ✗ build_trust     · chime 4 > 3
+   ✗ build_trust     · chime 4 > 3
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+   ✗ betray          · player.secrets_held is empty
+
+  AUDIT  ✅ consistent (0 retries)
+╚═════════════════════════════════════════════╝
+  1. Leave the napkin, Marrow. You've done nothing wrong tonight — and you don't
+owe anyone in this room an answer they haven't earned.
+  2. A different question, then. Whose was that decanter meant for — and why did
+they refuse it?
+  3. Then we correct her together. You know the hours of this house; I know what
+I saw. Neither of us is safe telling it alone.
+  4. I'll say where I was before the third chime — all of it — if you tell me 
+who else came to those chambers after.
+
+> 
+Vesper does not answer at once. He sets his hand flat on the decanter's stopper 
+— crystal, still full, still dark — and you notice he does not lift it.
+
+"Someone has been talking in my halls," he says. "Not you. Not yet. But the 
+shape of the talk arrived before you did, and it has my name folded into it." 
+His smile is thin and unhurried, a man with two chimes left and no intention of 
+spending them badly. "You ask whose it was meant for. That is a better question 
+than the one you meant to ask, so I will not reward it."
+
+Behind you, Marrow shifts. Forty years of service have taught him exactly how 
+long to wait before intervening, and he waits precisely that long.
+
+"The decanter was poured at dusk, my lord," Marrow says gently — gently, because
+he is warmed toward you tonight and would rather you not be sent from the room. 
+"It has been poured at dusk for some time now."
+
+Vesper's fingers stay on the stopper.
+
+"Thank you, Marrow," he says. "That will do."
+
+╔═ CHIME 5 ────────────────────── 1 until dawn ═╗
+  VESPER  █████░░░░░  0     COHERENCE  ██████████  1.0
+
+  Marrow    ██████████   +5   —
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   (none)
+
+  PRUNED OPTIONS
+   ✗ build_trust     · chime 5 > 3
+   ✗ build_trust     · chime 5 > 3
+   ✗ build_trust     · chime 5 > 3
+   ✗ probe_secret    · marrow's secret already known
+   ✗ offer_alliance  · chime 5 > 4
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+
+  AUDIT  ✅ consistent (0 retries)
+╚═════════════════════════════════════════════╝
+  1. Marrow — you and I want the same thing tonight. Stand with me and I'll see 
+your forty years counted, whatever comes of this hour.
+  2. My lord, ask Marrow who else he's told about the dusk pouring. He's been 
+generous with that detail — I'm not the first to hear it.
+  3. Marrow, tell me who poured it and when it changed. Do that, and your name 
+never leaves my mouth in this house.
+  4. Careful, Marrow. You've offered one truth freely. If I have to pry the rest
+loose, your lord learns how long you've known and stayed quiet.
+
+> 
+Marrow does not answer at once. He sets the decanter down with the care of a man
+who has set it down ten thousand times, and forty years move behind his face 
+like weather.
+
+"Counted," he repeats. "Nobody's ever offered to count them."
+
+Across the room Tobias Vane rises abruptly, chair legs barking on stone, and 
+goes out through the servants' door without excusing himself. Ilsabet watches 
+him go the way one watches a door, not a man.
+
+Marrow doesn't watch. His eyes have gone to the low cabinet beside the cold 
+hearth — brass-cornered, keyed, a stain bloomed dark across its lid, old enough 
+to have been scrubbed and given up on. He looks at it the way you'd look at a 
+grave you dug yourself.
+
+"Then stand where I can see you," he says. "And when I tell you there are things
+in this house that have already been tried, you'll not make me say what they 
+were. Not yet. Not with three hours of dark left and him upstairs still hoping."
+
+The clock ticks toward the sixth chime.
+
+╔═ CHIME 6 ────────────────────── 0 until dawn ═╗
+  VESPER  ██████░░░░  +1     COHERENCE  ██████████  1.0
+
+  Marrow    ██████████   +5   —
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   ✓ "the player allied with marrow"   marrow           → Vesper NOW
+
+  PRUNED OPTIONS
+   ✗ build_trust     · chime 6 > 3
+   ✗ build_trust     · chime 6 > 3
+   ✗ build_trust     · chime 6 > 3
+   ✗ probe_secret    · marrow's secret already known
+   ✗ offer_alliance  · chime 6 > 4
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+
+  AUDIT  ✅ consistent (1 retry)
+╚═════════════════════════════════════════════╝
+  1. "Where you can see me. Always." I say it warm, and I mean the cabinet — the
+moment his back turns, that lid comes up, key or no key.
+  2. "Then here's my price. I won't make you say it — if you unlock that cabinet
+before the sixth chime and let me look. Silence for sight, Marrow."
+  3. "Three hours of dark, and one of them I'll spend with a poker under that 
+brass lid. Tell me now, or hear it splinter and tell the boy why."
+  4. I lower my voice as I cross to her. "You watched Tobias like a door. What's
+behind it — and what's behind the stain on that cabinet lid?"
+
+> 
+Marrow's hands stop moving. Forty years of service have taught him how to hold a
+silence, and he holds this one long enough that you hear the house settling 
+around it — the floorboards, the wind, the dwindling fire in the long room.
+
+"Silence for sight," he repeats. Confiding, almost fond. "You've learned to 
+bargain like him."
+
+He crosses to the cabinet. Draws a key from beneath his collar on a cord worn 
+shiny. The lock is old and stubborn and gives with a sound like a small bone.
+
+Then the door at the far end opens, and Vesper Ashgrove says your name.
+
+Marrow's hand flattens against the cabinet, closing it. Not locking. Closing.
+
+"He's decided the bequest," Marrow murmurs. "He wants you there when he says it.
+Ilsabet and Tobias are already standing."
+
+His eyes go to the cabinet, then to you — you, whom he considers an ally, who 
+knows what he knows and hasn't spoken it.
+
+"After," he says. "If there is an after. Go."
+
+The sixth chime is gathering in the clockwork.
+
+╔═ CHIME 6 ────────────────────── 0 until dawn ═╗
+  VESPER  ██████░░░░  +1     COHERENCE  ██████████  1.0
+
+  Marrow    ██████████   +5   —
+  Ilsabet   █████░░░░░    0   —
+  Tobias    █████░░░░░    0   —
+
+  RUMOR NETWORK
+   ✓ "the player allied with marrow"   marrow           → Vesper NOW
+
+  PRUNED OPTIONS
+   ✗ build_trust     · chime 6 > 3
+   ✗ build_trust     · chime 6 > 3
+   ✗ build_trust     · chime 6 > 3
+   ✗ probe_secret    · marrow's secret already known
+   ✗ offer_alliance  · chime 6 > 4
+   ✗ offer_alliance  · ilsabet.trust 0 < 1
+   ✗ offer_alliance  · tobias.trust 0 < 1
+
+  AUDIT  ✅ consistent (0 retries)
+╚═════════════════════════════════════════════╝
+  1. I step toward the door and raise my voice. "Vesper — Marrow keeps a key 
+beneath his collar. Ask him what the cabinet holds."
+  2. "Then give me the key now and I'll stand silent through every word he says.
+You keep your hands clean. I open it after."
+  3. "Close it if you like. But if I walk in there ignorant, I'll tell them 
+exactly whose key opens that lock — and what you've held back."
+  4. I fall into step beside her in the corridor. "You're standing already. What
+did you promise him tonight, to be certain of your place?"
+
+Vesper names you heir. You decided, and you held to it.

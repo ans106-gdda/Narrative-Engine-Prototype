@@ -44,51 +44,54 @@ def _pre_checks(L: Ledger, narration: str) -> list[Violation]:
                     explanation=f"{name} is not alive but appears as speaking/acting",
                 ))
 
-    known_first_names = set()
-    for cid in world.CANDIDATE_IDS:
-        for part in world.archetype(cid)["name"].split():
-            known_first_names.add(part.strip(".,").lower())
-    known_first_names.add("vesper")
-
-    _STOPWORDS = {
-        "the", "a", "an", "you", "your", "he", "she", "it", "they", "i", "we",
-        "still", "yet", "then", "now", "perhaps", "maybe", "well", "yes", "no",
-        "oh", "ah", "hi", "hello", "did", "do", "does", "have", "has", "had",
-        "was", "were", "is", "are", "one", "two", "three", "four", "five", "six",
-        "but", "and", "or", "so", "if", "when", "where", "how", "what", "why",
-        "not", "never", "always", "later", "here", "there", "this", "that",
-        "these", "those", "even", "only", "just", "though", "although",
+    # absent_candidate: catch a character who does not exist being made to speak
+    # or act. Earlier this was a blacklist of common words, which flagged every
+    # capitalised noun in the prose -- including "Ashgrove", a name from canon.
+    # Inverted to a whitelist (world.KNOWN_PROPER_NOUNS) AND narrowed to tokens
+    # actually followed by a speech or action verb, which is the only case the
+    # rule is meant to catch.
+    ACTION_VERBS = {
+        "says", "said", "say", "speaks", "spoke", "asks", "asked", "replies",
+        "replied", "answers", "answered", "whispers", "whispered", "murmurs",
+        "murmured", "laughs", "laughed", "nods", "nodded", "watches", "watched",
+        "steps", "stepped", "turns", "turned", "moves", "moved", "stands",
+        "stood", "sits", "sat", "smiles", "smiled", "leans", "leaned", "enters",
+        "entered", "crosses", "crossed", "lifts", "lifted", "sets", "reaches",
+        "reached", "tells", "told", "calls", "called", "is", "was", "has", "had",
     }
 
-    def _strip_possessive(word: str) -> str:
-        if word.endswith("'s"):
-            return word[:-2]
-        if word.endswith("’s"):
-            return word[:-2]
-        return word
+    def _clean(word: str) -> str:
+        for suffix in ("'s", "\u2019s"):
+            if word.endswith(suffix):
+                word = word[: -len(suffix)]
+        return word.strip("'\":;,.()\u201c\u201d!?")
 
     sentences = narration.replace("!", ".").replace("?", ".").split(".")
     flagged = set()
     for sentence in sentences:
-        stripped_sentence = sentence.strip()
-        tokens = stripped_sentence.split()
+        tokens = sentence.split()
         for idx, tok in enumerate(tokens):
-            after_quote = idx > 0 and tokens[idx - 1].endswith(('"', "'", "“"))
-            cleaned = _strip_possessive(tok.strip("'\":;,()“”"))
-            if not cleaned or not cleaned[0].isupper() or len(cleaned) < 3:
-                continue
-            low = cleaned.lower()
-            if low in _STOPWORDS or low in known_first_names:
-                continue
+            # Sentence-initial capitalisation carries no signal. A token right
+            # after a closing quote also starts a sentence -- splitting on "."
+            # does not see the break when dialogue ends the previous one.
+            after_quote = tokens[idx - 1].endswith(('"', "'", "\u201d"))
             if idx == 0 or after_quote:
                 continue
-            if low in flagged:
+            cleaned = _clean(tok)
+            if len(cleaned) < 3 or not cleaned[0].isupper():
+                continue
+            low = cleaned.lower()
+            if low in world.KNOWN_PROPER_NOUNS or low in flagged:
+                continue
+            # Only a name that speaks or acts is an invented character.
+            following = {_clean(t).lower() for t in tokens[idx + 1: idx + 4]}
+            if not (following & ACTION_VERBS):
                 continue
             flagged.add(low)
             violations.append(Violation(
                 rule="absent_candidate",
                 quote=cleaned,
-                explanation=f"'{cleaned}' is not in CANDIDATE_IDS + ['Vesper']",
+                explanation=f"'{cleaned}' speaks or acts but is not a character in this world",
             ))
 
     return violations

@@ -104,16 +104,20 @@ The auditor runs two layers before a narration is accepted:
 - **Layer 1 (Python, no LLM)** — `hidden_thread_leak` (keyword match against undisclosed plot threads), `dead_speaks`, `absent_candidate`. Fast, deterministic, catches the cheap failures.
 - **Layer 2 (LLM, `effort="high"`, adaptive thinking)** — five targeted checks against canon, trust/emotional_state tone, `stated_positions`/`secrets_held`, hidden threads, and — the one that matters most — whether the *narrator's own voice* asserts a `rumor_network` entry marked `true: false` as fact. A character repeating a lie is correct; the narrator asserting it is a bug.
 
-`audited_narration()` retries up to twice, feeding violations back into the next narration attempt. If it still fails after two retries, the game does not hang — it accepts the narration and appends every violation to `contradiction_log`, so the failure is data instead of a crash. A real entry from a played session:
+`audited_narration()` retries up to twice, feeding violations back into the next narration attempt. If it still fails after two retries, the game does not hang — it accepts the narration and appends every violation to `contradiction_log`, so the failure is data instead of a crash.
 
-```json
-{
-  "rule": "absent_candidate",
-  "quote": "Ashgrove",
-  "explanation": "'Ashgrove' is not in CANDIDATE_IDS + ['Vesper']"
-}
+**A note on Layer 1, and what tuning it cost.** The `absent_candidate` check was first written as a blacklist: flag any capitalised word mid-sentence that is not a known character name. Across nine played turns it fired ten times and was wrong ten times — it flagged `"Ashgrove"`, Vesper's own surname, taken from `immutable_canon`, along with any capitalised common noun. Each false positive burned two retries (a narration call plus an audit call), so roughly two thirds of the token spend went to chasing phantoms, and the retry loop was absorbing failures that did not exist.
+
+The rule was inverted: a whitelist of legitimate proper nouns (`world.KNOWN_PROPER_NOUNS`) **and** a requirement that the token be followed within three words by a speech or action verb — because the rule only ever meant to catch *an invented character who speaks or acts*. Replaying the same nine narrations through the corrected check:
+
 ```
-(This specific false-positive — flagging Vesper's own surname as an unknown character — is a known sharp edge of the deterministic name-scan heuristic; it costs a retry, not a crash, which is exactly the failure mode the retry loop exists to absorb.)
+absent_candidate false positives across 9 real narrations: 10 -> 0
+invented character ("Gideon steps from the alcove and says your name") -> still caught
+```
+
+`tests/test_auditor.py` pins all five cases. A clean six-chime run after the fix ([`docs/sample_session.jsonl`](docs/sample_session.jsonl)) reports `consistent: true` on every turn with two retries total, down from sixteen across nine turns.
+
+The lesson generalises past this project: **a consistency checker that cries wolf is worse than no checker**, because the retry budget it burns is the same budget a real contradiction would have needed.
 
 ---
 
@@ -162,4 +166,8 @@ cp .env.example .env   # paste your ANTHROPIC_API_KEY
 ./.venv/bin/python main.py --load fixtures/x.json --input "..."   # single turn, for A/B
 ```
 
-Every turn is logged in full to `logs/session_<ts>.jsonl` — one JSON object per chime, complete ledger included, which is the primary evidence trail for state tracking.
+Every turn is logged in full to `logs/session_<ts>.jsonl` — one JSON object per chime, complete ledger included. That folder is git-ignored (runs are local), so a complete clean session is committed as evidence:
+
+- **[`docs/sample_session.jsonl`](docs/sample_session.jsonl)** — six chimes, one JSON object each, carrying the full ledger, the patch applied, the human-readable diff, and the audit verdict.
+- **[`docs/sample_run.txt`](docs/sample_run.txt)** — the same session as the player saw it: panels, narration, and options.
+- **[`docs/ab_demo.txt`](docs/ab_demo.txt)** — the A/B comparison from §6.

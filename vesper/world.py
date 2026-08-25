@@ -44,7 +44,20 @@ IMMUTABLE_CANON = [
     "Marrow has served House Ashgrove for forty years.",
     "Ilsabet Crane and Tobias Vane are human. Marrow is a ghoul. Only Vesper is a vampire.",
     "No one leaves the house before dawn.",
+    "Vesper Ashgrove is referred to as he/him. Marrow is he/him, Ilsabet Crane is she/her, Tobias Vane is he/him.",
 ]
+
+# Every proper noun that may legitimately appear in narration. The auditor's
+# absent_candidate check treats anything capitalised and NOT in this set as an
+# invented character. Derived names (surnames, the house) must be listed here or
+# canon text itself gets flagged.
+KNOWN_PROPER_NOUNS = {
+    "marrow",
+    "ilsabet", "crane",
+    "tobias", "vane",
+    "vesper", "ashgrove",
+    "house",
+}
 
 POSITION_TAGS = [
     "fearless", "fearful", "pro_marrow", "anti_marrow",

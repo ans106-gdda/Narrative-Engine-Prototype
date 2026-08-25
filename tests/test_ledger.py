@@ -5,7 +5,7 @@ def test_new_game():
     L = ledger.new_game()
     assert len(L.candidates) == 3
     assert all(c.trust == 0 for c in L.candidates.values())
-    assert len(L.immutable_canon) == 5
+    assert len(L.immutable_canon) == len(world.IMMUTABLE_CANON)
 
 
 def test_build_trust_twice():
